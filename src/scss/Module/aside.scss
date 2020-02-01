@@ -20,6 +20,11 @@
         display: inline-block;
 
         font-size: 14px;
+        color: $link-color;
+    
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -48,6 +53,12 @@
     position: relative;
 
     margin-left: 1em;
+
+    color: $link-color;
+
+    &:hover {
+        text-decoration: underline;
+    }
     
     &:not(:last-child) {
         margin-bottom: 10px;
