@@ -1,3 +1,21 @@
-.c-section {}
+.c-section {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
 
-.c-primary {}
+    width: $max-width;
+
+    margin: 54px auto;
+
+    @include mq-down('xl') {
+        width: $common-width;
+    }
+    
+    &__primary {
+        width: 780px;
+    }
+
+    &__aside {
+        width: 300px;
+    }
+}

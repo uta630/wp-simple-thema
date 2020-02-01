@@ -14,7 +14,7 @@ $breakpoint-up: (
     'sm': 'screen and (min-width: 480px)',
     'md': 'screen and (min-width: 768px)',
     'lg': 'screen and (min-width: 1024px)',
-    'xl': 'screen and (min-width: 1280px)',
+    'xl': 'screen and (min-width: 1140px)',
     'xxl': 'screen and (min-width: 1440px)',
     'xxxl': 'screen and (min-width: 1920px)',
 ) !default;
@@ -23,7 +23,7 @@ $breakpoint-down: (
     'sm': 'screen and (max-width: 479px)',
     'md': 'screen and (max-width: 767px)',
     'lg': 'screen and (max-width: 1023px)',
-    'xl': 'screen and (max-width: 1199px)',
+    'xl': 'screen and (max-width: 1139px)',
     'xxl': 'screen and (max-width: 1439px)',
     'xxxl': 'screen and (min-width: 1919px)',
 ) !default;
@@ -37,4 +37,11 @@ $breakpoint-down: (
     @media #{map-get($breakpoint-down, $breakpoint)} {
         @content;
     }
+}
+
+/* text overflow */
+@mixin textoverflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
