@@ -1,3 +1,24 @@
-.c-header {}
+.c-header {
+    display: flex;
+    justify-content: space-between;
 
-.c-gnav {}
+    max-width: $max-width;
+    width: $common-width;
+
+    margin: 12px auto;
+
+    &__heading {
+        font-size: 32px;
+        font-weight: bold;
+    }
+}
+
+.c-gnav {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-around;
+
+    &__link {
+        margin: 0 16px;
+    }
+}

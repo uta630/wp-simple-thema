@@ -1,9 +1,12 @@
 /* size */
-$commonWidth: percentage(1640 / 1920);
+$common-width: percentage(1140 / 1440);
+$max-width: 1140px;
 
 /* color */
-$primary-color: #333;
-$secondary-color: #666;
-
 $black: #000;
 $white: #fff;
+
+$gray: #ccc;
+$light-gray: #eee;
+
+$link-color: #4aa744;
