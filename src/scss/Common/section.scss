@@ -1,21 +1,49 @@
 .c-section {
+    @include mq-up('xl') {
+        width: 1140px;
+    }
+    @include mq-down('xl') {
+        width: 960px;
+    }
+    @include mq-down('lg') {
+        width: $common-width;
+    }
+    @include mq-down('md') {
+        width: 92%;
+    }
+}
+
+.c-section {
     align-items: flex-start;
     display: flex;
     justify-content: space-between;
 
-    width: $max-width;
-
     margin: 54px auto;
 
-    @include mq-down('xl') {
-        width: $common-width;
+    @include mq-down('md') {
+        display: block;
+        margin: 40px 4%;
     }
     
     &__primary {
         width: 780px;
+        
+        @include mq-down('xl') {
+            width: percentage(780 / 1140);
+        }
+        @include mq-down('md') {
+            width: 100%;
+        }
     }
-
+    
     &__aside {
         width: 300px;
+        
+        @include mq-down('xl') {
+            width: percentage(300 / 1140);
+        }
+        @include mq-down('md') {
+            width: 100%;
+        }
     }
 }
