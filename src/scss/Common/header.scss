@@ -10,6 +10,10 @@
     &__heading {
         font-size: 32px;
         font-weight: bold;
+
+        @include mq-down('md') {
+            font-size: 18px;
+        }
     }
 }
 
