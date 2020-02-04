@@ -45,8 +45,14 @@
             text-decoration: underline;
         }
     }
-    img {
+    figure {
         margin: 12px 0;
+    }
+    figcaption {
+        margin: 12px 0 16px;
+
+        color: $dark-gray;
+        font-size: 14px;
     }
 
     time {
@@ -74,5 +80,48 @@
             top: 0;
             left: -1em;
         }
+    }
+
+    // 引用
+    blockquote {
+        margin: 2em 0 !important;
+
+        & p {
+            background: $light-gray;
+
+            margin: 0;
+            padding: 24px;
+
+            line-height: 1.6;
+            font-style: italic;
+            font-size: 16px !important;
+            color: $dark-gray;
+
+            @include mq-down('md') {
+                font-size: 18px;
+            }
+        }
+    }
+    // 詩
+    pre {
+        background-color: $light-gray;
+
+        padding: 30px 25px;
+
+        white-space: pre-wrap !important;
+
+        line-height: 1.5;
+        color: #5a5a5a;
+        font-size: 16px;
+        font-weight: 500;
+
+        border: 1px solid $gray;
+
+        @include mq-down('md') {
+            font-size: 14px;
+        }
+    }
+    strong {
+        font-weight: bold;
     }
 }
