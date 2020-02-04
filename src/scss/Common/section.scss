@@ -40,6 +40,22 @@
         }
     }
 
+    &__heading {
+        margin-bottom: 40px;
+        padding-bottom: 14px;
+
+        line-height: 1;
+        font-size: 24px;
+        font-weight: bold;
+        
+        border-bottom: 4px solid $primary-color;
+        
+        &--mark {
+            font-size: 16px;
+            font-weight: normal;
+        }
+    }
+
     &__aside {
         width: 300px;
 

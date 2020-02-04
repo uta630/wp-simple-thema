@@ -24,7 +24,7 @@
         display: inline-block;
 
         font-size: 14px;
-        color: $link-color;
+        color: $primary-color;
 
         &:hover {
             text-decoration: underline;
@@ -67,7 +67,7 @@
 
     margin-left: 1em;
 
-    color: $link-color;
+    color: $primary-color;
 
     @include mq-down('md') {
         font-size: 14px;

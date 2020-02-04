@@ -6,7 +6,7 @@
 
 <div class="c-section l-section">
     <main class="c-section__primary">
-    <h1 class="c-section__heading"><?php echo esc_html( get_category( $cat )->name ); ?></h1>
+    <h1 class="c-section__heading"><?php echo esc_html( get_category( $cat )->name ); ?><span class="c-section__heading--mark"> の記事一覧</span></h1>
 	<?php get_template_part('list'); ?>
     </main>
 
