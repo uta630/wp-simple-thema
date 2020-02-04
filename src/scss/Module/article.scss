@@ -11,14 +11,14 @@
         }
     }
     h3 {
-        margin-top: 40px;
-        padding: 6px 12px;
+        margin: 20px 0;
+        padding: 8px 18px;
 
-        line-height: 2;
+        line-height: 1.6;
         font-size: 24px;
         font-weight: bold;
 
-        border-left: 4px solid $link-color;
+        border-left: 8px solid $link-color;
 
         @include mq-down('md') {
             font-size: 20px;
