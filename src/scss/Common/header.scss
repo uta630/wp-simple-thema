@@ -5,7 +5,10 @@
     max-width: $max-width;
     width: $common-width;
 
-    margin: 12px auto;
+    margin: 0 auto;
+    padding: 24px 0;
+
+    border-bottom: 1px solid $gray;
 
     &__heading {
         font-size: 32px;
