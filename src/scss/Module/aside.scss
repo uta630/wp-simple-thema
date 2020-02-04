@@ -17,6 +17,41 @@
     }
 }
 
+.c-search {
+    display: flex;
+
+    &__field {
+        width: 100%;
+
+        padding: 8px 12px;
+
+        font-size: 16px;
+
+        border: solid $gray;
+        border-width: 1px 0px 1px 1px;
+    }
+
+    &__submit {
+        @include fx-c;
+
+        background: $gray;
+
+        padding: 0 10px;
+
+        font-size: 12px;
+
+        border: 1px solid $gray;
+
+        &::before {
+            content: 'search';
+
+            display: block;
+
+            font-size: 21px;
+        }
+    }
+}
+
 .c-links {
     line-height: 1.2;
 
