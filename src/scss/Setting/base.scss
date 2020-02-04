@@ -26,6 +26,13 @@ button {
     appearance: none;
 }
 
+/* fallback */
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v48/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');
+}
 .material-icons::before {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -41,5 +48,5 @@ button {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     color: $dark-gray;
-  }
+}
   
