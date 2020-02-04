@@ -1,9 +1,5 @@
 <header class="c-header l-section">
     <h1 class="c-header__heading"><a href="/"><?php bloginfo('name'); ?></a></h1>
 
-    <nav class="c-header__nav c-gnav">
-        <a href="" class="c-gnav__link">リンク</a>
-        <a href="" class="c-gnav__link">リンク</a>
-        <a href="" class="c-gnav__link">リンク</a>
-    </nav>
+    <?php dynamic_sidebar('header_nav'); ?>
 </header>

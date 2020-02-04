@@ -68,6 +68,14 @@ add_action('widgets_init', create_function('', 'return register_widget("custom_a
 function widgets_area() {
     register_sidebar(
         array(
+            'name'          => 'ヘッダーナビ',
+            'id'            => 'header_nav',
+            'before_widget' => '<nav class="c-header__nav c-gnav">',
+            'after_widget'  => '</nav>',
+        )
+    );
+    register_sidebar(
+        array(
             'name'          => 'サイドバー',
             'id'            => 'right_sidebar',
             'before_widget' => '<section class="c-aside__item">',
