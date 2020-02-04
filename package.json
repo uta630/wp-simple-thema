@@ -24,8 +24,8 @@
     "format:ts": "eslint src/ts/**/*.ts --fix",
     "format:js": "eslint src/js/**/*.js --fix",
     "format:all": "run-p format:scss format:js",
-    "min:css": "cleancss -o dist/css/style.css dist/css/style.css",
-    "min:js": "uglifyjs dist/js/script.js -o dist/js/script.js",
+    "min:css": "cleancss dist/css/style.css -o style.css",
+    "min:js": "uglifyjs dist/js/script.js -o script.js",
     "prepare:all": "run-p min:js min:css delete:map",
     "test": "jest --env=jsdom"
   },

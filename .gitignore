@@ -2,3 +2,5 @@
 node_modules/*
 /dist/
 /prod/
+style.css
+script.js

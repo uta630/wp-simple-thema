@@ -12,7 +12,7 @@ add_theme_support('custom-header', $custom_header_defaults);
 function add_default_scripts() {
     wp_enqueue_script( 
       'base-script', 
-      get_theme_file_uri( '/js/script.js' ),
+      get_theme_file_uri( '/script.js' ),
       false
     );
   }
