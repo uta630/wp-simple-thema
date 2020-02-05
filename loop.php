@@ -12,7 +12,15 @@
         <a href="<?php the_permalink(); ?>"><img src="<?php echo $image_url; ?>" alt="<?php the_title(); ?>" class="c-contents__thumb"></a>
 
         <div class="c-contents__detail">
-            <?php if(has_category()):?><p class="c-contents__tag"><a href="<?php echo get_category_link( get_the_category()[0]->cat_ID ); ?>"><?php echo get_the_category()[0]->cat_name; ?></a></p><?php endif; ?>
+            <?php
+                $first_key = key(array_slice(get_the_tags(), 0, 1, true));
+                $last_key = key(array_slice(get_the_tags(), -1, 1, true));
+                foreach ( get_the_tags() as $key => $tag ) {
+            ?>
+                <?php if( $key === $first_key ) :?><p class="c-contents__tag"><?php endif; ?>
+                <a href="<?php echo get_tag_link( $tag->term_id ); ?>"><?php echo $tag->name ?></a>
+                <?php if( $key === $last_key ) :?></p><?php else: ?> / <?php endif; ?>
+            <?php } ?>
             <h3 class="c-contents__heading"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
             <time class="c-contents__date"><?php the_time("Y.m.d"); ?></time>
         </div>

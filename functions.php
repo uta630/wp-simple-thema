@@ -257,6 +257,7 @@ class custom_tag_widget extends WP_Widget {
             $posttags = get_tags( $args );
 
             if ( $posttags ){
+                $last_key = key(array_slice($posttags, -1, 1, true));
                 foreach( $posttags as $key => $tag ) {
                     ?>
                     <a href="<?php echo get_tag_link( $tag->term_id ); ?>" class="c-links__item"><?php echo $tag->name; ?></a><?php if( $key !== $last_key ) :?> / <?php endif; ?>
