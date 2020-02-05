@@ -62,14 +62,14 @@
     &__tag {
         display: inline-block;
 
-        background: $gray;
-
         margin-bottom: 6px;
-        padding: 2px 6px;
 
         font-size: 11px;
         font-weight: bold;
-        color: $white;
+        
+        & a {
+            color: $primary-color;
+        }
     }
 
     &__heading {
