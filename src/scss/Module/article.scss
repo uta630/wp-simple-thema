@@ -135,3 +135,47 @@
         font-weight: bold;
     }
 }
+
+.c-pager {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    &__link{
+        width: 40px;
+
+        line-height: 40px;
+        text-align: center;
+        color: $gray;
+        font-size: 12px;
+        font-weight: bold;
+
+        &::before {
+            margin-top: -3px;
+
+            vertical-align: middle;
+            color: inherit;
+        }
+
+        &.active {
+            color: $dark-gray;
+        }
+        
+        &:hover {
+            color: $dark-gray;
+
+        }
+    }
+
+    &__prev {
+        &::before {
+            content: 'keyboard_arrow_left';
+        }
+    }
+
+    &__next {
+        &::before {
+            content: 'keyboard_arrow_right';
+        }
+    }
+}

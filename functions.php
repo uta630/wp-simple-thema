@@ -27,7 +27,7 @@ function addMenuClass( $classes ) {
 }
 add_filter( 'nav_menu_css_class', 'addMenuClass', 10, 2 );
 
-function pagination($pages = '', $range = 2) {
+function pagination($pages = '', $range = 1) {
     $showitems = ($range * 2) + 1;
 
     global $paged;
@@ -43,18 +43,17 @@ function pagination($pages = '', $range = 2) {
    
     if(1 != $pages) {
         echo "<div class=\"c-pager\">";
-        echo "<ul class=\"c-pager__items\">\n";
 
-        if($paged > 1) echo "<li class=\"c-pager__item c-pager__prev\"><a href='".get_pagenum_link($paged - 1)."'>Prev</a></li>\n";
+        if($paged > 1) echo "<a href='".get_pagenum_link($paged - 1)."' class=\"c-pager__link c-pager__prev material-icons\"></a>\n";
 
         for($i=1; $i <= $pages; $i++){
             if(1 != $pages && ( !($i >= $paged + $range + 1 || $i <= $paged - $range - 1) || $pages <= $showitems )){
-                echo ($paged == $i) ? "<li class=\"c-pager__item active\">".$i."</li>\n" : "<li class=\"c-pager__item\"><a href='".get_pagenum_link($i)."' class=\"c-pager__link\">".$i."</a></li>\n" ;
+                echo ($paged == $i) ? "<i class=\"c-pager__link active\">".$i."</i>\n" : "<a href='".get_pagenum_link($i)."' class=\"c-pager__link\">".$i."</a>\n" ;
             }
         }
 
-        if($paged < $pages) echo "<li class=\"c-pager__item c-pager__next\"><a href='".get_pagenum_link($paged + 1)."' class=\"c-pager__link\">Next</a></li>\n";
-        echo "</ul>\n";
+        if($paged < $pages) echo "<a href='".get_pagenum_link($paged + 1)."' class=\"c-pager__link c-pager__next material-icons\"></a>\n";
+
         echo "</div>\n";
     }
 }
