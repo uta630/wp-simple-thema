@@ -17,7 +17,7 @@ Template Name: Article 〜記事ページ〜
                 <?php while (have_posts()) : the_post(); ?>
                     <h2><?php the_title(); ?></h2>
                     <time class="material-icons"><?php the_time("Y/m/d"); ?></time>
-                    <?php if(has_post_thumbnail()): ?><img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>"><?php endif; ?>
+                    <?php if(has_post_thumbnail()): ?><img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" loading="lazy"><?php endif; ?>
                     <?php the_content(); ?>
                 <?php endwhile; ?>
             <?php else : ?>

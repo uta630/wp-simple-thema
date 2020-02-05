@@ -2,7 +2,7 @@
 <?php while(have_posts()) : the_post(); ?>
 <?php $image_url = has_post_thumbnail() ? get_the_post_thumbnail_url() : 'https://placehold.jp/640x360.png' ; ?>
     <article class="c-contents">
-        <a href="<?php the_permalink(); ?>"><img src="<?php echo $image_url; ?>" alt="<?php the_title(); ?>" class="c-contents__thumb"></a>
+        <a href="<?php the_permalink(); ?>"><img src="<?php echo $image_url; ?>" alt="<?php the_title(); ?>" class="c-contents__thumb" loading="lazy"></a>
 
         <div class="c-contents__detail">
             <?php if(has_category()):?><p class="c-contents__tag"><a href="<?php echo get_category_link( get_the_category()[0]->cat_ID ); ?>"><?php echo get_the_category()[0]->cat_name; ?></a></p><?php endif; ?>

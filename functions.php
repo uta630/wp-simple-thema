@@ -179,7 +179,7 @@ class recommend_widget extends WP_Widget {
         <article class="c-list">
             <h4 class="c-list__heading"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
             <?php $image_url = has_post_thumbnail() ? get_the_post_thumbnail_url() : 'https://placehold.jp/640x360.png' ; ?>
-            <a href="<?php the_permalink(); ?>"><img src="<?php echo $image_url; ?>" alt="<?php the_title(); ?>" class="c-list__thumb"></a>
+            <a href="<?php the_permalink(); ?>"><img src="<?php echo $image_url; ?>" alt="<?php the_title(); ?>" class="c-list__thumb" loading="lazy"></a>
         </article>
         <?php endwhile; endif; ?>
         <?php

@@ -5,11 +5,11 @@
     <article class="c-jumbotron">
         <h2 class="c-jumbotron__heading"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
         <time class="c-jumbotron__date"><?php the_time("Y.m.d"); ?></time>
-        <a href="<?php the_permalink(); ?>"><img src="<?php echo $image_url; ?>" alt="<?php the_title(); ?>" class="c-jumbotron__thumb"></a>
+        <a href="<?php the_permalink(); ?>"><img src="<?php echo $image_url; ?>" alt="<?php the_title(); ?>" class="c-jumbotron__thumb" loading="lazy"></a>
     </article>
     <?php else :?>
     <article class="c-contents">
-        <a href="<?php the_permalink(); ?>"><img src="<?php echo $image_url; ?>" alt="<?php the_title(); ?>" class="c-contents__thumb"></a>
+        <a href="<?php the_permalink(); ?>"><img src="<?php echo $image_url; ?>" alt="<?php the_title(); ?>" class="c-contents__thumb" loading="lazy"></a>
 
         <div class="c-contents__detail">
             <?php
