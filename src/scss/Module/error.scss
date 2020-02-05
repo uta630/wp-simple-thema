@@ -1,0 +1,12 @@
+.c-error {
+    line-height: 1.6;
+
+    a {
+        color: #4aa744;
+        font-size: 14px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
