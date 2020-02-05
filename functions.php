@@ -62,6 +62,7 @@ add_action('widgets_init', 'widgets_area');
 add_action('widgets_init', create_function('', 'return register_widget("panel_widget");'));
 add_action('widgets_init', create_function('', 'return register_widget("recommend_widget");'));
 add_action('widgets_init', create_function('', 'return register_widget("custom_category_widget");'));
+add_action('widgets_init', create_function('', 'return register_widget("custom_tag_widget");'));
 add_action('widgets_init', create_function('', 'return register_widget("custom_archive_widget");'));
 
 function widgets_area() {
@@ -220,6 +221,48 @@ class custom_category_widget extends WP_Widget {
             <a href="<?php echo get_category_link( $category->term_id ); ?>" class="c-links__item"><?php echo $category->name; ?></a><?php if( $key !== $last_key ) :?> / <?php endif; ?>
         <?php } ?>
         <?php
+        echo $after_widget;
+    }
+}
+class custom_tag_widget extends WP_Widget {
+    function custom_tag_widget() {
+        parent::WP_Widget(false, $name = 'カスタムタグ');
+    }
+    function form( $instance ) {
+        ?>
+            <p>
+                <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
+                <input type="text" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>">
+            </p>
+        <?php
+    }
+    function update($new_instance, $old_instance) {
+        $instance = $old_instance;
+        $instance['title'] = strip_tags($new_instance['title']);
+        return $instance;
+    }
+    function widget( $args, $instance ) {
+        extract( $args );
+     
+        if($instance['title'] != ''){
+            $title = apply_filters('widget_title', $instance['title']);
+        }
+        echo $before_widget;
+        if( $title ){
+            echo $before_title . $title . $after_title;
+        }
+        ?>
+        <?php
+            $args = array( 'orderby' => 'name', 'order' => 'ASC' );
+            $posttags = get_tags( $args );
+
+            if ( $posttags ){
+                foreach( $posttags as $key => $tag ) {
+                    ?>
+                    <a href="<?php echo get_tag_link( $tag->term_id ); ?>" class="c-links__item"><?php echo $tag->name; ?></a><?php if( $key !== $last_key ) :?> / <?php endif; ?>
+                    <?php
+                }
+            }
         echo $after_widget;
     }
 }
