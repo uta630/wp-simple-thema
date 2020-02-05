@@ -66,14 +66,14 @@ add_action('widgets_init', create_function('', 'return register_widget("custom_t
 add_action('widgets_init', create_function('', 'return register_widget("custom_archive_widget");'));
 
 function widgets_area() {
-    register_sidebar(
-        array(
-            'name'          => 'ヘッダーナビ',
-            'id'            => 'header_nav',
-            'before_widget' => '<nav class="c-header__nav c-gnav">',
-            'after_widget'  => '</nav>',
-        )
-    );
+    // register_sidebar(
+    //     array(
+    //         'name'          => 'ヘッダーナビ',
+    //         'id'            => 'header_nav',
+    //         'before_widget' => '<nav class="c-header__nav c-gnav">',
+    //         'after_widget'  => '</nav>',
+    //     )
+    // );
     register_sidebar(
         array(
             'name'          => 'サイドバー',
