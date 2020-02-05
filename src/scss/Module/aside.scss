@@ -20,6 +20,21 @@
 .c-search {
     display: flex;
 
+    &__label {
+        overflow: hidden;
+
+        width: 1px;
+        height: 1px;
+
+        margin: -1px;
+
+        padding: 0;
+
+        border: 0;
+
+        clip: rect(0 0 0 0);
+    }
+
     &__field {
         width: 100%;
 
@@ -36,6 +51,8 @@
 
         background: $gray;
 
+        width: 62px;
+
         padding: 0 10px;
 
         font-size: 12px;
@@ -43,7 +60,7 @@
         border: 1px solid $gray;
 
         &::before {
-            content: 'search';
+            // content: 'search';
 
             display: block;
 
