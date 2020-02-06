@@ -10,7 +10,7 @@ Template Name: 固定ページ
 <?php get_template_part('content', 'menu'); ?>
 
 <div class="c-section l-section">
-    <main class="c-section__primary">
+    <main class="c-section__article">
         <article class="c-article">   
             <?php if(have_posts()) : ?>
                 <?php while (have_posts()) : the_post(); ?>
@@ -24,10 +24,15 @@ Template Name: 固定ページ
                 <p>検索で見つかるかもしれません。</p><br>
                 <?php get_search_form(); ?>
             <?php endif; ?>
+            
+            <div class="c-social">
+                <a href="https://twitter.com/share?url=<?php echo get_the_permalink(); ?>&text=<?php echo get_the_title(); ?>" target="_blank" class="c-social--twitter">Twitter</a>
+                <a href="http://getpocket.com/edit?url=<?php echo get_the_permalink();?>&title=<?php echo get_the_title(); ?>" target="_blank" class="c-social--pocket">Pocket</a>
+                <a href="https://social-plugins.line.me/lineit/share?url=<?php echo get_the_permalink(); ?>" target="_blank" class="c-social--line">LINE</a>
+                <a href="http://b.hatena.ne.jp/add?mode=confirm&url=<?php echo get_the_permalink();?>&title=<?php echo get_the_title(); ?>" target="_blank" class="c-social--hatebu">はてブ</a>
+            </div>
         </article>
     </main>
-
-	<?php get_sidebar(); ?>
 </div>
 
 <?php get_footer(); ?>

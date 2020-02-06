@@ -3,6 +3,42 @@
         &:not(:last-child) {
             margin-bottom: 40px;
         }
+
+        .page_item {
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+
+            a {
+                display: block;
+            
+                position: relative;
+            
+                margin-left: 1em;
+            
+                color: $primary-color;
+            
+                @include mq-down('md') {
+                    font-size: 14px;
+                }
+            
+                &:hover {
+                    text-decoration: underline;
+                }
+            
+                &::before {
+                    content: '・';
+            
+                    display: block;
+            
+                    position: absolute;
+                    top: 0;
+                    left: -1em;
+            
+                    color: $dark-gray;
+                }
+            }
+        }
     }
 
     &__heading {
