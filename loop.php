@@ -4,7 +4,7 @@
     <?php if($wp_query->current_post === 0) : ?>
     <article class="c-jumbotron">
         <h2 class="c-jumbotron__heading"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-        <time class="c-jumbotron__date"><?php the_time("Y.m.d"); ?></time>
+        <time class="c-jumbotron__date material-icons"><?php the_time("Y.m.d"); ?></time>
         <a href="<?php the_permalink(); ?>"><img src="<?php echo $image_url; ?>" alt="<?php the_title(); ?>" class="c-jumbotron__thumb" loading="lazy"></a>
     </article>
     <?php else :?>
@@ -22,7 +22,7 @@
                 <?php if( $key === $last_key ) :?></p><?php else: ?> / <?php endif; ?>
             <?php } ?>
             <h3 class="c-contents__heading"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-            <time class="c-contents__date"><?php the_time("Y.m.d"); ?></time>
+            <time class="c-contents__date material-icons"><?php the_time("Y.m.d"); ?></time>
         </div>
     </article>
     <?php endif; ?>

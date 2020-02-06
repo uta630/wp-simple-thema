@@ -52,21 +52,17 @@
         color: $dark-gray;
         font-size: 14px;
     }
+    img {
+        display: block;
+
+        margin-top: 12px;
+    }
 
     time {
         margin: 6px 0 12px;
 
         line-height: 1.3;
         font-size: 14px;
-
-        &::before {
-            content: 'date_range';
-
-            margin-right: 6px;
-
-            vertical-align: bottom;
-            font-size: 18px;
-        }
     }
 
     ul {

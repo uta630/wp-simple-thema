@@ -19,6 +19,17 @@ img {
 
 time {
     display: block;
+
+    &.material-icons {
+        &::before {
+            content: 'date_range';
+
+            margin-right: 6px;
+
+            vertical-align: bottom;
+            font-size: 18px;
+        }
+    }
 }
 
 input,

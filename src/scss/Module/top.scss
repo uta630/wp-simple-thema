@@ -84,5 +84,11 @@
 
     &__date {
         font-size: 12px;
+        
+        &.material-icons::before {
+            margin-right: 4px;
+
+            font-size: 14px;
+        }
     }
 }
