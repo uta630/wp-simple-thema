@@ -1,9 +1,3 @@
-<?php
-/*
-Template Name: Article 〜記事ページ〜
-*/
-?>
-
 <?php get_header(); ?>
 
 <body <?php body_class(); ?>>

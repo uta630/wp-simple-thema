@@ -1,23 +1,33 @@
+<?php
+/*
+Template Name: 固定ページ
+*/
+?>
 <?php get_header(); ?>
 
 <body <?php body_class(); ?>>
-	<?php get_template_part('content', 'menu'); ?>
 
-	<main class="main main-col" ontouchstart="">
-		<section class="block" id="coding">
-			<div class="block-head">
-				<h2 class="block-head__header">ようこそ</h2>
-			</div>
+<?php get_template_part('content', 'menu'); ?>
 
-			<div class="block-col post">
-				<div class="post__text">
-					<h2>index.php</h2>
+<div class="c-section l-section">
+    <main class="c-section__primary">
+        <article class="c-article">   
+            <?php if(have_posts()) : ?>
+                <?php while (have_posts()) : the_post(); ?>
+                    <h2><?php the_title(); ?></h2>
+                    <time class="material-icons"><?php the_time("Y/m/d"); ?></time>
+                    <?php if(has_post_thumbnail()): ?><img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" loading="lazy"><?php endif; ?>
+                    <?php the_content(); ?>
+                <?php endwhile; ?>
+            <?php else : ?>
+                <h2 class="title">記事が見つかりませんでした。</h2>
+                <p>検索で見つかるかもしれません。</p><br>
+                <?php get_search_form(); ?>
+            <?php endif; ?>
+        </article>
+    </main>
 
-					<p>このページはindex.phpファイルのページです。</p>
-					<p>いわゆるエラーページです。</p>
-				</div>
-			</div>
-		</section>
-	</main><!-- /main -->
+	<?php get_sidebar(); ?>
+</div>
 
 <?php get_footer(); ?>
