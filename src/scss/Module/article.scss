@@ -134,6 +134,44 @@
     strong {
         font-weight: bold;
     }
+
+    &__social {
+        display: flex;
+        justify-content: center;
+
+        margin-top: 32px;
+         
+        & a {
+            width: 20%;
+
+            padding: 16px 0;
+
+            text-align: center;
+            color: $white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+         
+        &--twitter {
+            background: #55acee;
+        }
+         
+        &--facebook {
+            background: #3B5998;
+        }
+         
+        &--pocket {
+            background: #ef3f56;
+        }
+         
+        &--line {
+            background: #1dcd00;
+        }
+         
+        &--hatebu {
+            background: #00a5de;
+        }
+    }
 }
 
 .c-pager {
